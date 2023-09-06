@@ -29,11 +29,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/movies', (req, res) => {
-  // const origin = req.header('origin');
-
-  // if (origin && ACCEPTED_ORIGINS.includes(origin)) {
-  //   res.header('Access-Control-Allow-Origin', origin);
-  // }
   const { genre } = req.query;
   if (genre) {
     const filteredMovies = movies.filter(movie => movie.genre.some(g => g.toLowerCase() === genre.toLowerCase()));
